@@ -3,3 +3,7 @@
 The Steps for the Mulit-Container Deployment looks like like following:
 
 ![Mulit-Container Deployment](img/complex_Part-MultiContainerDeplyoment.png)
+
+## Travis-CI configuration
+
+Enable Repository to work with [Travis-CI](travis-ci.com)
