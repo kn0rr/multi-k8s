@@ -5,10 +5,10 @@ services:
 
 # In a real project i would test also the other image which i can simple add here and in the script section to test
 before_install:
-    - docker build -t kn0rr/multi-docker-reactTest -f ./client/Dockerfile.dev ./client
+    - docker build -t kn0rr/multi-docker-reacttest -f ./client/Dockerfile.dev ./client
 
 scripts:
-    - docker run -e CI=true kn0rr/multi-docker-reactTest npm run test
+    - docker run -e CI=true kn0rr/multi-docker-reacttest npm run test
 
 after_success:
     - docker build -t kn0rr/multi-docker-client ./client
