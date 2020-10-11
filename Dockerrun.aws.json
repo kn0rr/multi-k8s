@@ -1,0 +1,35 @@
+{
+    "AWSEBDockerrunVersion":1,
+    "containerDefinitions":[
+        {
+            "name":"client",
+            "image": "kn0rr/multi-docker-client",
+            "hostname":"client",
+            "essential":false
+        },
+        {
+            "name":"server",
+            "image": "kn0rr/multi-docker-server",
+            "hostname":"api",
+            "essential":false
+        },
+        {
+            "name":"worker",
+            "image": "kn0rr/multi-docker-worker",
+            "hostname":"worker",
+            "essential":false
+        },
+        {
+            "name":"nginx",
+            "image": "kn0rr/multi-docker-nginx",
+            "essential":true,
+            "portMappings":[
+                {
+                    "hostPort":80,
+                    "containerPort":80
+                }
+            ],
+            "links":["client","server"]
+        }
+    ]
+}
