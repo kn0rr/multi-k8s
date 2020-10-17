@@ -1,5 +1,6 @@
-language: generic
 sudo: required
+language: generic
+
 services:
     - docker
 
@@ -7,7 +8,7 @@ services:
 before_install:
     - docker build -t kn0rr/multi-docker-reacttest -f ./client/Dockerfile.dev ./client
 
-scripts:
+script:
     - docker run -e CI=true kn0rr/multi-docker-reacttest npm run test
 
 after_success:
@@ -27,11 +28,11 @@ after_success:
 # Deploy to AWS via Travis
 deploy:
     provider: elasticbeanstalk
-    region: eu-central-1
-    app: multi-docker
-    env: MultiDocker-env
-    bucket_name: elasticbeanstalk-eu-central-1-542808750437
-    bucket_path: docker-multi
+    region: 'eu-central-1'
+    app: 'multi-docker'
+    env: 'MultiDocker-env'
+    bucket_name: 'elasticbeanstalk-eu-central-1-542808750437'
+    bucket_path: 'docker-multi'
     on:
         branch: master
     access_key_id: $AWS_ACCESS_KEY
