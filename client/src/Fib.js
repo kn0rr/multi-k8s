@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
 class Fib extends Component{
@@ -32,8 +32,8 @@ class Fib extends Component{
         this.setState({index:''});
     }
 
-    renderSeenIndexes(){
-        return this.state.seenIndexes.map(({number})=>number).join(', ');
+    renderSeenIndexes() {
+        return this.state.seenIndexes.map(({ number }) => number).join(', ');
     }
 
    renderValues() {
@@ -58,7 +58,7 @@ render() {
           <label>Enter your index:</label>
           <input
             value={this.state.index}
-            onChange={event => this.setState({ index: event.target.value })}
+            onChange={(event) => this.setState({ index: event.target.value })}
           />
           <button>Submit</button>
         </form>
