@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: worker-deployment
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            component: worker
+    template:
+        metadata:
+            labels:
+                component: worker
+        spec:
+            containers:
+                - name: worker
+                  image: kn0rr/multi-k8s-worker
+                  # Define environment variable for connection to redis; all of them needs to be Strings so for numbers wrap them in ''
+                  env:
+                    - name: REDIS_HOST
+                      value: redis-cluster-ip-service
+                    - name: REDIS_PORT
+                      value: '6379'
+# Nothing is trying to get in touch with our worker instead the worker is 
+# reaching out to other container so we don't need open ports or a service

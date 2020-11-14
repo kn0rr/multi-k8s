@@ -2,7 +2,7 @@
 
 The Steps for the Mulit-Container Deployment looks like like following:
 
-![Mulit-Container Deployment](img/complex_Part-MultiContainerDeplyoment.png)
+![Mulit-Container Deployment](img/k8s_multiContainerApp.svg)
 
 ## Travis-CI configuration
 
