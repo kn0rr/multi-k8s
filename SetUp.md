@@ -23,7 +23,5 @@ Enable Repository to work with [Travis-CI](travis-ci.com)
 2. Add new User with programmatic access
  - Permission: Attach existing policies directly:
  - Add all ElasticBeanstalk permissions
-Access key ID
- AKIAX4YPMHFS4F55MVYT
- secret Access key:
- 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
+
+ 
