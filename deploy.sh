@@ -8,6 +8,6 @@ docker push kn0rr/multi-k8s-server:$SHA
 docker push kn0rr/multi-k8s-worker:latest
 docker push kn0rr/multi-k8s-worker:$SHA
 kubectl apply -f k8s
-kubectl set image deployments/server-deployment server= kn0rr/multi-k8s-server:$SHA
-kubectl set image deployments/server-deployment client= kn0rr/multi-k8s-client:$SHA
-kubectl set image deployments/server-deployment worker= kn0rr/multi-k8s-worker:$SHA
+kubectl set image deployments/server-deployment server=kn0rr/multi-k8s-server:$SHA
+kubectl set image deployments/server-deployment client=kn0rr/multi-k8s-client:$SHA
+kubectl set image deployments/server-deployment worker=kn0rr/multi-k8s-worker:$SHA
