@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: myholidaydiary-net-tls
+spec:
+  secretName: myholidaydiary-net
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: myholidaydiary.net
+  dnsNames:
+   - myholidaydiary.net
+   - www.myholidaydiary.net
+  acme:
+    config:
+     - http01:
+        ingressClass: nginx
+       domains:
+          - myholidaydiary.net
+          - www.myholidaydiary.net
+
